@@ -49,6 +49,8 @@ export class MappedTypeNodeParser implements SubNodeParser {
             return type === undefined ? undefined : new ArrayType(type);
         } else if (keyListType instanceof EnumType) {
             return new ObjectType(id, [], this.getValues(node, keyListType, context), false);
+        } else if (keyListType === undefined) {
+            return new ObjectType(id, [], [], false);
         } else {
             throw new LogicError(
                 // eslint-disable-next-line max-len
