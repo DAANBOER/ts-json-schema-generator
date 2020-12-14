@@ -78,6 +78,7 @@
   "scripts": {
     "prepublishOnly": "yarn build",
     "build": "tsc",
+    "prepare": "tsc",
     "watch": "tsc -w",
     "lint": "eslint {src,test,factory}/**/*.ts",
     "format": "yarn lint --fix",
